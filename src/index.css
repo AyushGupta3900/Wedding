@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: #FAF7F2;
+    color: #2D2424;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Botanical & Luxury Textures */
+.bg-parchment-texture {
+  background-color: #FAF6EE;
+  background-image: 
+    radial-gradient(#E8DFD1 0.75px, transparent 0.75px),
+    radial-gradient(#DFD4C0 0.75px, #FAF6EE 0.75px);
+  background-size: 28px 28px;
+  background-position: 0 0, 14px 14px;
+}
+
+.bg-envelope-texture {
+  background-color: #1F070E;
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(183, 110, 121, 0.12) 0%, transparent 70%),
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.012) 0px, rgba(255, 255, 255, 0.012) 2px, transparent 2px, transparent 12px);
+}
+
+/* Gold foil shimmer */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #ECC880 0%, #D4AF37 35%, #FFF0C2 50%, #B8860B 75%, #E5B299 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-rosegold-gradient {
+  background: linear-gradient(135deg, #FBE3E1 0%, #EAA2A6 40%, #B76E79 70%, #9B5560 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gold-shimmer {
+  background: linear-gradient(90deg, rgba(212,175,55,0.05) 0%, rgba(255,240,194,0.3) 50%, rgba(212,175,55,0.05) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 4s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Seal glow pulse */
+@keyframes sealPulse {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(224, 169, 175, 0.45), 0 0 50px rgba(183, 110, 121, 0.25), inset 0 2px 4px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 55px rgba(236, 200, 128, 0.8), 0 0 95px rgba(212, 175, 55, 0.5), inset 0 2px 6px rgba(255, 255, 255, 0.9);
+  }
+}
+
+.animate-seal-glow {
+  animation: sealPulse 2.4s ease-in-out infinite;
+}
+
+/* Diya Flame Flicker */
+@keyframes flameFlicker {
+  0%, 100% {
+    transform: scale(1) rotate(-1deg);
+    filter: drop-shadow(0 0 8px rgba(255, 170, 0, 0.8)) drop-shadow(0 0 20px rgba(255, 80, 0, 0.5));
+  }
+  25% {
+    transform: scale(1.08, 0.94) rotate(1.5deg);
+    filter: drop-shadow(0 0 12px rgba(255, 200, 50, 0.9)) drop-shadow(0 0 25px rgba(255, 90, 0, 0.6));
+  }
+  50% {
+    transform: scale(0.96, 1.05) rotate(-2deg);
+    filter: drop-shadow(0 0 7px rgba(255, 150, 0, 0.7)) drop-shadow(0 0 16px rgba(255, 70, 0, 0.4));
+  }
+  75% {
+    transform: scale(1.04, 0.98) rotate(1deg);
+    filter: drop-shadow(0 0 11px rgba(255, 190, 30, 0.85)) drop-shadow(0 0 22px rgba(255, 85, 0, 0.55));
+  }
+}
+
+.animate-diya-flame {
+  animation: flameFlicker 1.8s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+/* Petal float animation */
+@keyframes floatPetal {
+  0% {
+    transform: translateY(-20px) rotate(0deg) translateX(0px);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.85;
+  }
+  85% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateY(105vh) rotate(360deg) translateX(50px);
+    opacity: 0;
+  }
+}
+
+.animate-petal {
+  animation-name: floatPetal;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-iteration-count: infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF6EE;
+}
+::-webkit-scrollbar-thumb {
+  background: #C97D7D;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7B1834;
+}
